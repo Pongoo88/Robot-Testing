@@ -1,0 +1,22 @@
+# ignore robotframework output files
+log.html
+output.xml
+report.html
+debug.log
+
+# ignore pyc files
+*.pyc
+
+#ignore screenshots from RF
+*.png
+
+# ignore pycharm project files
+.idea
+
+#ignore Chrome
+error.txt
+chromedriver.exe
+chromedriver
+
+#ignore python
+python
