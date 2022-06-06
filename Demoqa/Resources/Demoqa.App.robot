@@ -4,13 +4,17 @@ Library    SeleniumLibrary
 *** Keywords ***
 
 Open Main Page
+    [Documentation]  Tento keyword nas redirectne na demoqa.com
+    [Tags]   MojPrvyTag
     go to    https://demoqa.com/
 
-Wait Until Page Is Loaded
+Wait Until Page Is Loaded #what page is loaded?
+    [Documentation]  Tento keyword okontroluje ci sa demoqa.com spravne naloaduje
+    [Tags]   MojDruhyTag
     wait until element is visible    id=app
     wait until element is visible    xpath=//*[@id="app"]/header/a
 
-Check Banner
+Check Banner #what banner?
     page should contain element    ${Banner}
 
 Check Elements
