@@ -9,7 +9,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-say-shitfuck:
+  say-shitfuck:
     docker:
       - image: cimg/base:stable
     steps:
