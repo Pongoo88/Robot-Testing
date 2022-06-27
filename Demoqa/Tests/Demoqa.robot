@@ -1,52 +1,56 @@
 *** Settings ***
-Documentation    Demoqa webpage test
+Documentation    Demoqa main webpage test for critical object presence
 Resource    ../Resources/Common.robot
 Resource    ../Resources/Demoqa.App.robot
 Test Setup    Common.Begin Web Test
 Test Teardown    Common.End Web Test
+Default Tags    Major
 
 *** Variables ***
-#variables that are linked to some kind of specific element should have unique name... we can have 50 banners in our app
-${Banner}    xpath=//*[@id="app"]/header/a
-${Elements}    xpath=//*[@id="app"]/div/div/div[2]/div/div[1]/div/div[2]
-${Forms}    xpath=//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[2]
-${Alerts}    xpath=//*[@id="app"]/div/div/div[2]/div/div[3]/div/div[2]
-${Widgets}    xpath=//*[@id="app"]/div/div/div[2]/div/div[4]/div/div[2]
-${Interactions}    xpath=//*[@id="app"]/div/div/div[2]/div/div[5]/div/div[2]
-${BookStore}    xpath=//*[@id="app"]/div/div/div[2]/div/div[6]/div/div[2]
+${BROWSER}    chrome
+${URL}    https://demoqa.com/
+
 
 *** Test Cases ***
-Banner #what banner?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Banner
+Main Page Banner Presence Check
+    [Documentation]    Inspection of the tested page for welcoming banner presence
+    [Tags]    Minor
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Check Main Page Banner Presence
 
-Elements #what Elements?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Elements
+Elements Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Elements" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Elements Box Presence
 
-Forms #what Forms?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Forms
+Forms Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Forms" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Forms Box Presence
 
-Alerts #what Alerts?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Alerts
+Alerts Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Alerts, Frame & Windows" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Alerts Box Presence
 
-Widgets #what Widgets?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Widgets
+Widgets Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Widgets" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Widgets Box Presence
 
-Interactions #what Interactions?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Interactions
+Interactions Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Interactions" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Interactions Box Presence
 
-Book Store #what Book Store?
-    Demoqa.App.Open Main Page
-    Demoqa.App.Wait Until Page Is Loaded
-    Demoqa.App.Check Book Store
+Book Store Navigation Box Presence
+    [Documentation]    Inspection of the tested page for "Book Store Application" navigation box presence
+    Demoqa.App.Open Demoqa Main Page
+    Demoqa.App.Wait Until The Main Page Is Loaded
+    Demoqa.App.Nav.Panel Book Store Application Box Presence
